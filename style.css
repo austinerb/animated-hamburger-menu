@@ -1,0 +1,131 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-image: url("https://www.pbs.org/wgbh/nova/media/original_images/nova-wonders-whats-the-universe-made-of-hero_WxVWP1e.jpg");
+}
+
+/* navbar */
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+/* hamburger menu */
+
+nav .hamburger {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
+  margin-top: 6px;
+  cursor: pointer;
+}
+
+nav .hamburger div {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: transform 0.2s ease;
+}
+
+nav .hamburger div::before,
+nav .hamburger div::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.7);
+  top: -5px;
+}
+
+nav .hamburger div::after {
+  top: 5px;
+}
+
+nav .hamburger.click div {
+  transform: rotate(135deg);
+}
+
+nav .hamburger.click div::before,
+nav .hamburger.click div::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* menu */
+
+nav .menu {
+  position: absolute;
+  width: 300px;
+  background-color: rgba(0,0,0,.8);
+  height: 100vh;
+  left: -300px;
+  transition: all .2s ease;
+}
+
+nav .menu.open {
+  left: 0;
+}
+
+nav .menu ul {
+  list-style: none;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+nav .menu ul li {
+  margin: 15px auto;
+}
+
+nav .menu ul li a {
+  text-decoration: none;
+  color: rgba(255,255,255,.8);
+}
+
+/* page content */
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,.5);
+}
+
+.container .content-wrapper {
+  flex: 1;
+  text-align: center;
+  line-height: 1.5;
+  padding: 30px 40px;
+  color: white;
+}
+
+.container .content-wrapper h1 {
+  font-size: 50px;
+}
+
+.container .content-wrapper p {
+  font-weight: bold;
+  color: rgba(255,255,255,.85);
+}
